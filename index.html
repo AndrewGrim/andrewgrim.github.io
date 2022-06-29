@@ -1,2 +1,34 @@
-Landing Page:
-<a href="eli5/index.html">eli5programming</a>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            canvas.emscripten {
+                display:block;
+                border: 0px none;
+                background-color: #333333;
+            }
+
+            .content {
+                border: 1px solid #333333;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="content">
+            <canvas class="emscripten" id="canvas" width="400", height="400" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+        </div>
+        <script type='text/javascript'>
+            var Module = {
+                preRun: [],
+                postRun: [],
+                canvas: (function () {
+                    return document.getElementById('canvas');
+                })()
+            };
+        </script>
+        <script async type="text/javascript" src="example_widget_gallery.js"></script>
+    </body>
+</html>
